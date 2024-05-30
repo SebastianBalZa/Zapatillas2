@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
 const port = 3001;
+const cors= require("cors");
 const { getZapa, getZapaById } = require("./controllers/zapatillas.controller");
+app.use(cors());
 
 app.get("/",getZapa);
 app.get("/:id",getZapaById)
